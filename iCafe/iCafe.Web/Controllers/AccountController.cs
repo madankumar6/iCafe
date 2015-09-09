@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using iCafe.Web.Filters;
 using iCafe.Web.Models;
+using iCafe.Core;
+using iCafe.Models;
 
 namespace iCafe.Web.Controllers
 {

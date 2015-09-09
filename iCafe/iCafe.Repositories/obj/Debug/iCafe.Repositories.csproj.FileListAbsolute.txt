@@ -1,0 +1,4 @@
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Repositories.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Repositories.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\obj\Debug\iCafe.Repositories.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\obj\Debug\iCafe.Repositories.pdb

@@ -1032,8 +1032,13 @@
     <None Include="Content\bower_components\morrisjs\spec\viz\run.sh" />
     <None Include="Content\bower_components\raphael\.bower.json" />
     <None Include="Content\bower_components\raphael\bower.json" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\iCafe.Core\iCafe.Core.csproj">
+      <Project>{6066CE2C-86FB-4B09-AD98-70ED46260CF6}</Project>
+      <Name>iCafe.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\iCafe.DAL\iCafe.DAL.csproj">
       <Project>{017E4FBA-EA05-4AA8-85BE-0401EF9DCB09}</Project>
       <Name>iCafe.DAL</Name>

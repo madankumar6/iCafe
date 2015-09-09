@@ -9,6 +9,7 @@ using iCafe.Models;
 
 namespace iCafe.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 

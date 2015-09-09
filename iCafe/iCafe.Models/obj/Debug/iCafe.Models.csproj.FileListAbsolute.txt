@@ -1,0 +1,10 @@
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\iCafe.Models.dll.config
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\iCafe.Models.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\iCafe.Models.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\EntityFramework.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\EntityFramework.xml
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\obj\Debug\iCafe.Models.csprojResolveAssemblyReference.cache
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\obj\Debug\iCafe.Models.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Models\obj\Debug\iCafe.Models.pdb
