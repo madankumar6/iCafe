@@ -51,11 +51,26 @@
   <ItemGroup>
     <Compile Include="Interfaces\Concrete\iCafeRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCafe.Core\iCafe.Core.csproj">
+      <Project>{6066CE2C-86FB-4B09-AD98-70ED46260CF6}</Project>
+      <Name>iCafe.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCafe.DAL\iCafe.DAL.csproj">
+      <Project>{017E4FBA-EA05-4AA8-85BE-0401EF9DCB09}</Project>
+      <Name>iCafe.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCafe.Models\iCafe.Models.csproj">
+      <Project>{44F4FB05-62FB-470C-ACEA-182DB549C0F1}</Project>
+      <Name>iCafe.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

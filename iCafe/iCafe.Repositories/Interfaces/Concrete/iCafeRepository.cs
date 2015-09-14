@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using iCafe.DAL;
 
 namespace iCafe.Repositories.Interfaces.Concrete
 {
     public class iCafeRepository<T> : IRepository<T> where T : class
     {
-        public DbContext DbContext { get; set; }
+        public iCafeEntities iCafeEntitiesContext { get; set; }
         public DbSet<T> DbSet { get; set; }
 
 
-        public iCafeRepository(DbContext dbContext)
+        public iCafeRepository(iCafeEntities iCafeEntitiesContext)
         {
-            this.DbContext = dbContext;
-            this.DbSet = this.DbContext.Set<T>();
+            this.iCafeEntitiesContext = iCafeEntitiesContext;
+            this.DbSet = this.iCafeEntitiesContext.Set<T>();
         }
 
         public virtual IQueryable<T> GetAll()
@@ -31,21 +32,21 @@ namespace iCafe.Repositories.Interfaces.Concrete
 
         public virtual void Add(T entity)
         {
-            DbEntityEntry entityEntry = DbContext.Entry<T>(entity);
+            //DbEntityEntry entityEntry = iCafeEntitiesContext.Entry<T>(entity);
 
-            if (entityEntry.State == EntityState.Detached)
-            {
-                entityEntry.State = EntityState.Added;
-            }
-            else
-            {
+            //if (entityEntry.State == EntityState.Detached)
+            //{
+            //    entityEntry.State = EntityState.Added;
+            //}
+            //else
+            //{
                 DbSet.Add(entity);
-            }
+            //}
         }
 
         public virtual void Update(T entity)
         {
-            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
+            DbEntityEntry dbEntityEntry = iCafeEntitiesContext.Entry(entity);
             if (dbEntityEntry.State == EntityState.Detached)
             {
                 DbSet.Attach(entity);
@@ -55,12 +56,17 @@ namespace iCafe.Repositories.Interfaces.Concrete
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            if (iCafeEntitiesContext.Entry(entity).State == EntityState.Detached)
+            {
+                DbSet.Attach(entity);
+            }
+            DbSet.Remove(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            T entityToDelete = DbSet.Find(id);
+            Delete(entityToDelete);
         }
     }
 }
