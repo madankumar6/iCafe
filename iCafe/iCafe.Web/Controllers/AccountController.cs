@@ -11,7 +11,11 @@ using WebMatrix.WebData;
 using iCafe.Web.Filters;
 using iCafe.Web.Models;
 using iCafe.Core;
+using iCafe.Core.Interfaces;
+using iCafe.Core.Interfaces.Concrete;
 using iCafe.Models;
+using iCafe.Repositories.Interfaces;
+using iCafe.Repositories.Interfaces.Concrete;
 
 namespace iCafe.Web.Controllers
 {
@@ -19,6 +23,20 @@ namespace iCafe.Web.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+                
+        private IUnitOfWork unitOfWork;
+        private IPassword passwordService;
+
+        public AccountController() : this(new UnitOfWork())
+        {
+            this.passwordService = new Password();
+        }
+
+        public AccountController(IUnitOfWork UnitOfWork)
+        {
+            this.unitOfWork = UnitOfWork;
+        }
+
         //
         // GET: /Account/Login
 
@@ -37,8 +55,10 @@ namespace iCafe.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            if (ModelState.IsValid && unitOfWork.UserRepository.isValidUser(model.UserName, model.Password))
             {
+                Session["Username"] = model.UserName;
+                FormsAuthentication.SetAuthCookie(model.UserName, false);
                 return RedirectToLocal(returnUrl);
             }
 
@@ -54,7 +74,9 @@ namespace iCafe.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+            Session.Clear();
+            Session.Abandon();
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
@@ -74,25 +96,44 @@ namespace iCafe.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(User userModel)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    // Attempt to register the user
+            //    try
+            //    {
+            //        WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+            //        WebSecurity.Login(model.UserName, model.Password);
+            //        return RedirectToAction("Index", "Home");
+            //    }
+            //    catch (MembershipCreateUserException e)
+            //    {
+            //        ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+            //    }
+            //}
+
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    string passwordHash = passwordService.CreateHashingPasssword(userModel.Password);
+
+                    var guestRole = unitOfWork.RoleRepository.GetRoleByName("Guest");
+                    userModel.RoleId = guestRole.RoleId;
+                    unitOfWork.UserRepository.Add(userModel);
+                    unitOfWork.SaveChanges();
+                    return RedirectToAction("Login", "Account");
                 }
-                catch (MembershipCreateUserException e)
+                catch (Exception e)
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    ModelState.AddModelError("",e.Message);
                 }
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View(userModel);
         }
 
         //
@@ -407,3 +448,4 @@ namespace iCafe.Web.Controllers
         #endregion
     }
 }
+

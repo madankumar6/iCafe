@@ -6,18 +6,30 @@ using System.Web;
 using System.Web.Mvc;
 using iCafe.DAL;
 using iCafe.Models;
+using iCafe.Repositories;
+using iCafe.Repositories.Interfaces;
+using iCafe.Repositories.Interfaces.Concrete;
 
 namespace iCafe.Web.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+        private IUnitOfWork unitOfWork;
 
-        iCafeEntities entities = new iCafeEntities();
+        public HomeController() : this(new UnitOfWork())
+        {
+
+        }
+
+        public HomeController(IUnitOfWork UnitOfWork)
+        {
+            this.unitOfWork = UnitOfWork;
+        }
 
         public ActionResult Index()
         {
-            var modal = entities.Roles.ToList();
+            //var modal = entities.Roles.ToList();
 
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 

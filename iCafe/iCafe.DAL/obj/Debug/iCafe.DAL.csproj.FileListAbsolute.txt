@@ -10,3 +10,6 @@ C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\bin\Debug\EntityFramework.SqlServe
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\obj\Debug\iCafe.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\obj\Debug\iCafe.DAL.dll
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\obj\Debug\iCafe.DAL.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\obj\Debug\iCafe.DAL.Migrations.InitialCreate.resources
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\obj\Debug\iCafe.DAL.csproj.GenerateResource.Cache
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.DAL\obj\Debug\iCafe.DAL.Migrations._16Sep.resources

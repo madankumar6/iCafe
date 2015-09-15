@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using iCafe.DAL;
+using System.Linq.Expressions;
 
 namespace iCafe.Repositories.Interfaces.Concrete
 {
@@ -20,9 +21,20 @@ namespace iCafe.Repositories.Interfaces.Concrete
             this.DbSet = this.iCafeEntitiesContext.Set<T>();
         }
 
-        public virtual IQueryable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return DbSet;
+        }
+
+        public virtual IEnumerable<T> Get(Expression<Func<T, bool>> filter = null)
+        {
+            IQueryable<T> query = DbSet;
+
+            if (filter != null)
+            {
+                query.Where(filter);
+            }
+            return query.ToList();
         }
 
         public virtual T GetById(int id)

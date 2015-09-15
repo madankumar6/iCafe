@@ -1047,6 +1047,10 @@
       <Project>{44F4FB05-62FB-470C-ACEA-182DB549C0F1}</Project>
       <Name>iCafe.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iCafe.Repositories\iCafe.Repositories.csproj">
+      <Project>{6D31B096-F9C4-4BA0-903F-9F380BB90071}</Project>
+      <Name>iCafe.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

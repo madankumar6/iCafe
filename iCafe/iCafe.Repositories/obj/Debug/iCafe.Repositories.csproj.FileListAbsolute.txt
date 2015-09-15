@@ -2,3 +2,15 @@ C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Repositor
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Repositories.pdb
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\obj\Debug\iCafe.Repositories.dll
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\obj\Debug\iCafe.Repositories.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\obj\Debug\iCafe.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Repositories.dll.config
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\EntityFramework.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Core.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.DAL.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Models.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Core.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.DAL.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\iCafe.Models.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\EntityFramework.xml
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Repositories\bin\Debug\EntityFramework.SqlServer.xml

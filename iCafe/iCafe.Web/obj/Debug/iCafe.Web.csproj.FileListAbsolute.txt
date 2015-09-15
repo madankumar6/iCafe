@@ -59,3 +59,5 @@ C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Web\obj\Debug\iCafe.Web.dll
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Web\obj\Debug\iCafe.Web.pdb
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Web\bin\iCafe.Core.dll
 C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Web\bin\iCafe.Core.pdb
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Web\bin\iCafe.Repositories.dll
+C:\Users\Yamuna\Desktop\iCafe\iCafe\iCafe.Web\bin\iCafe.Repositories.pdb

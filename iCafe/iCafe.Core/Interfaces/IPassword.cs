@@ -5,7 +5,7 @@ using System.Text;
 
 namespace iCafe.Core.Interfaces
 {
-    interface IPassword
+    public interface IPassword
     {
         string CreateHashingPasssword(string password);
     }

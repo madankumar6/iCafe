@@ -50,8 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\Concrete\iCafeRepository.cs" />
+    <Compile Include="Interfaces\Concrete\RoleRepository.cs" />
+    <Compile Include="Interfaces\Concrete\UnitOfWork.cs" />
+    <Compile Include="Interfaces\Concrete\UserRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\UnitOfWork.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
